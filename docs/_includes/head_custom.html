@@ -1,0 +1,9 @@
+<style>
+  .main-content img { cursor: zoom-in; border: 1px solid #d0d7de; border-radius: 6px; }
+  #zoom-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.88); z-index: 9999; display: none; overflow: auto; text-align: center; padding: 3rem 1rem 2rem; }
+  #zoom-overlay.open { display: block; }
+  #zoom-overlay img { max-width: 96vw; height: auto; cursor: zoom-in; border: 0; border-radius: 4px; background: #fff; }
+  #zoom-overlay.full img { max-width: none; cursor: zoom-out; }
+  #zoom-overlay .zoom-hint { position: fixed; top: .6rem; left: 1rem; color: #fff; font-size: .85rem; opacity: .85; }
+  #zoom-overlay .zoom-close { position: fixed; top: .4rem; right: 1rem; color: #fff; background: transparent; border: 0; font-size: 2rem; line-height: 1; cursor: pointer; }
+</style>

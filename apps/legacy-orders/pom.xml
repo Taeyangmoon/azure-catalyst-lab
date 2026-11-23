@@ -10,7 +10,7 @@
   <name>Contoso Order Portal (legacy)</name>
 
   <properties>
-    <!-- 의도적으로 오래된 설정: JDK 8, javax.* 서블릿, log4j 1.x, 구형 MySQL 드라이버 -->
+    <!-- Intentionally outdated: JDK 8, javax.* servlets, log4j 1.x, old MySQL driver -->
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -31,8 +31,12 @@ Catalyst는 무료이고 Appliance나 VM 없이 파일 가져오기로 시작합
 | `docs/` | 랩 문서(GitHub Pages) |
 | `data/` | Contoso Korea CMDB 내보내기와 컨텍스트 파일, 업로드용 ZIP |
 | `scripts/` | CMDB 데이터 생성, Azure 배포, 정리 스크립트 |
-| `apps/legacy-orders/` | 현대화할 레거시 Java(Tomcat) 앱 |
+| `apps/legacy-orders/` | 현대화할 레거시 Java(Tomcat) 앱 (화면, 로그, 주석 모두 **영어**: 한국어/영어 랩 공용) |
 | `apps/legacy-orders-modernized/` | Modernize CLI로 현대화한 결과 (비교용 참고 정답) |
+
+## 화면 확대
+
+문서의 캡처 이미지를 **클릭하면 크게** 볼 수 있습니다. 확대한 이미지를 한 번 더 클릭하면 원본 크기로 보이고, `Esc`로 닫습니다.
 
 ## 알려진 한계
 

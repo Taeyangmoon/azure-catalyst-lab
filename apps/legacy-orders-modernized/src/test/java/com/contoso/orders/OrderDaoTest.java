@@ -18,8 +18,8 @@ public class OrderDaoTest {
     public void saveAndFindAll() throws Exception {
         OrderDao dao = new OrderDao();
         dao.init();
-        dao.save(new Order("홍길동", "노트북", 2));
+        dao.save(new Order("Alice Kim", "Laptop", 2));
         assertEquals(1, dao.findAll().size());
-        assertEquals("노트북", dao.findAll().get(0).getItem());
+        assertEquals("Laptop", dao.findAll().get(0).getItem());
     }
 }

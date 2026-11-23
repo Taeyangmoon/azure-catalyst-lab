@@ -8,7 +8,7 @@ nav_order: 8
 
 ⏱️ 약 20분 · 💰 추가 비용 없음
 
-평가를 바탕으로 **웨이브 계획**(옮기는 순서)과 **Platform Landing Zone**(옮길 대상 환경의 뼈대)을 만듭니다. Ignite BRK409의 "Proposal → Design and migration waves" 단계에 해당합니다.
+평가를 바탕으로 **웨이브 계획**(옮기는 순서)과 **Platform Landing Zone**(옮길 대상 환경의 뼈대)을 만듭니다.
 
 {: .note }
 이 랩에서는 **계획까지만** 합니다. 웨이브를 **Commit**하거나 랜딩 존을 **배포**하지 않습니다. 실제로 옮기려면 Appliance 기반 discovery와 복제 도구가 필요합니다.
@@ -73,8 +73,36 @@ Catalyst가 **설계 문서**(Platform Landing Zone - Design Document)를 만들
 | 구성요소 | 관리 그룹 계층, 플랫폼 구독, 허브 VNet, Azure Firewall, VPN Gateway, Log Analytics + Defender for Cloud |
 | 구성 | **A. HLD**(아키텍트용 상위 설계), **B. LLD**(IaC 엔지니어용 리소스별 값) |
 
+### 지역을 Korea Central로 바꾸기
+
 {: .warning }
-설계 문서의 **Region이 EASTUS**로 나왔습니다. 비즈니스 케이스에서 **Korea Central**을 지정했는데도 플랫폼 랜딩 존은 **기본값**을 쓴 것입니다. 한국 고객에게 쓰려면 **View settings**와 설계 값을 확인하고 지역을 바꿔야 합니다. (이 랩에서 지역을 바꿔 다시 생성하는 것까지는 확인하지 않았습니다.)
+Catalyst가 처음 만든 Platform Landing Zone의 **Region은 EASTUS**입니다. 비즈니스 케이스에서 Korea Central을 지정했어도 **기본 PLZ는 따로 생성**되기 때문입니다. 그리고 아래 **View settings**에는 **지역을 고르는 항목이 없습니다.** 지역은 **Catalyst 에이전트**로 바꿉니다. (Learn의 Platform Landing Zone 문서도 에이전트와 대화로 생성하도록 안내합니다.)
+
+1. 상단 **Copilot**에서 **Catalyst** 에이전트를 열고 `catalyst-lab` 프로젝트를 선택합니다.
+2. 아래처럼 요청합니다.
+
+```text
+I want to create a Platform Landing Zone (PLZ). Use Korea Central as the Azure region.
+```
+
+에이전트는 **Single-region (Korea Central)** 로 구성안을 제안합니다. 이때 기본 제안은 **Full 티어**(Azure Firewall **Premium**, DDoS, ExpressRoute Gateway, Bastion, Private DNS 모두 **On**)입니다. 실습에서는 비용과 단순함을 위해 **Lite**로 유지하겠다고 다시 요청합니다.
+
+```text
+Keep the Lite scale tier with Azure Firewall Basic, Hub and Spoke, region Korea Central. Turn off DDoS Protection, ExpressRoute Gateway, Azure Bastion and Private DNS. Use GitHub for deployment. Generate the Platform Landing Zone now.
+```
+
+에이전트가 생성을 시작하고, **설계 문서와 IaC ZIP**이 비동기로 만들어진다고 안내합니다(약 2분). 완료 후 **Application design → Platform landing zone**을 다시 열면 설계 문서의 **Region이 KOREACENTRAL**로 바뀌어 있습니다.
+
+![에이전트로 Korea Central 요청]({{ '/images/ko/h10-agent-plz-request.png' | relative_url }})
+
+| 항목 | 처음 (기본) | 에이전트 요청 후 |
+|---|---|---|
+| Region | EASTUS | **KOREACENTRAL** |
+| 티어 / 방화벽 | Lite / Azure Firewall Basic | Lite / Azure Firewall Basic (동일) |
+| 예상 월 비용 | $451.95 | $451.95 (표시된 값은 동일) |
+
+{: .note }
+에이전트가 제안한 **Full 티어를 그대로 수락하면** 구성요소가 크게 늘어 비용도 올라갑니다. 이 랩에서는 Full 티어의 비용은 확인하지 않았습니다. 또 생성된 **IaC ZIP(Terraform)** 은 내려받아 VS Code에서 다듬고 배포할 수 있지만([문서](https://learn.microsoft.com/azure/migrate/platform-landing-zone)), 이 랩에서는 **배포하지 않았고 ZIP도 내려받지 않았습니다.**
 
 ### 설정 바꾸기 (View settings)
 

@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-/** 클래스패스의 db.properties에서 접속 정보를 읽습니다. (환경 변수나 관리 ID 미지원) */
+/** Reads connection info from db.properties on the classpath. (no environment variable or managed identity support) */
 public final class DbConfig {
     private static final Properties PROPS = new Properties();
 

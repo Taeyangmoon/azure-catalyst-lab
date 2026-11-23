@@ -14,7 +14,7 @@ import org.apache.commons.fileupload2.core.FileUploadException;
 import org.apache.commons.fileupload2.jakarta.servlet6.JakartaServletFileUpload;
 import org.apache.log4j.Logger;
 
-/** 주문 첨부 파일을 서버 로컬 디스크에 저장합니다. (스토리지 현대화 대상) */
+/** Stores order attachments on the server local disk. (a storage modernization target) */
 @WebServlet(urlPatterns = "/upload")
 public class UploadServlet extends HttpServlet {
     private static final Logger LOG = Logger.getLogger(UploadServlet.class);
@@ -23,7 +23,7 @@ public class UploadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         File dir = new File(DbConfig.uploadDir());
         if (!dir.exists() && !dir.mkdirs()) {
-            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "업로드 폴더를 만들 수 없습니다.");
+            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Cannot create the upload folder.");
             return;
         }
         try {
@@ -34,7 +34,7 @@ public class UploadServlet extends HttpServlet {
                 if (!item.isFormField()) {
                     File target = new File(dir, new File(item.getName()).getName());
                     item.write(target.toPath());
-                    LOG.info("첨부 파일 저장: " + target.getAbsolutePath());
+                    LOG.info("Attachment saved: " + target.getAbsolutePath());
                 }
             }
             resp.sendRedirect(req.getContextPath() + "/orders");

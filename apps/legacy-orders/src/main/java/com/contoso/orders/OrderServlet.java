@@ -19,7 +19,7 @@ public class OrderServlet extends HttpServlet {
         try {
             dao.init();
         } catch (SQLException e) {
-            throw new ServletException("주문 테이블을 초기화하지 못했습니다.", e);
+            throw new ServletException("Failed to initialize the orders table.", e);
         }
     }
 
@@ -29,7 +29,7 @@ public class OrderServlet extends HttpServlet {
             req.setAttribute("orders", dao.findAll());
             req.getRequestDispatcher("/index.jsp").forward(req, resp);
         } catch (SQLException e) {
-            LOG.error("주문 조회 실패", e);
+            LOG.error("Failed to load orders", e);
             resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
     }
@@ -42,10 +42,10 @@ public class OrderServlet extends HttpServlet {
         int quantity = Integer.parseInt(req.getParameter("quantity"));
         try {
             dao.save(new Order(customer, item, quantity));
-            LOG.info("주문 접수: " + customer + " / " + item + " x " + quantity);
+            LOG.info("Order received: " + customer + " / " + item + " x " + quantity);
             resp.sendRedirect(req.getContextPath() + "/orders");
         } catch (SQLException e) {
-            LOG.error("주문 저장 실패", e);
+            LOG.error("Failed to save the order", e);
             resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
     }

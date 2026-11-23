@@ -1,0 +1,25 @@
+<div id="zoom-overlay" role="dialog" aria-label="Image viewer">
+  <span class="zoom-hint">클릭: 원본 크기로 보기 / 다시 클릭: 맞춤 · Click to toggle full size · Esc: close</span>
+  <button class="zoom-close" type="button" aria-label="Close">&times;</button>
+  <img alt="">
+</div>
+<script>
+(function () {
+  var overlay = document.getElementById('zoom-overlay');
+  var big = overlay.querySelector('img');
+  function close() { overlay.classList.remove('open', 'full'); big.removeAttribute('src'); document.body.style.overflow = ''; }
+  document.querySelectorAll('.main-content img').forEach(function (img) {
+    img.addEventListener('click', function () {
+      big.src = img.currentSrc || img.src;
+      big.alt = img.alt;
+      overlay.classList.add('open');
+      overlay.scrollTop = 0; overlay.scrollLeft = 0;
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  big.addEventListener('click', function (e) { e.stopPropagation(); overlay.classList.toggle('full'); });
+  overlay.addEventListener('click', close);
+  overlay.querySelector('.zoom-close').addEventListener('click', close);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();
+</script>
