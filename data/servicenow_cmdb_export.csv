@@ -1,0 +1,32 @@
+sys_id,name,sys_class_name,os,os_version,cpu_count,ram,disk_space,ip_address,u_environment,u_app_code,install_status,u_criticality,support_group,location,u_installed_software
+0001a1b2c3d4e5f60718293a4b5c6d7e,krc-ord-web-01,cmdb_ci_linux_server,Red Hat Enterprise Linux,8.8,4,8192,100,10.10.1.11,P,ORD,1,1,Order-Ops,Seoul-DC1,nginx 1.22
+0002a1b2c3d4e5f60718293a4b5c6d7e,krc-ord-web-02,cmdb_ci_linux_server,Red Hat Enterprise Linux,8.8,4,8192,100,10.10.1.12,P,ORD,1,1,Order-Ops,Seoul-DC1,nginx 1.22
+0003a1b2c3d4e5f60718293a4b5c6d7e,krc-ord-app-01,cmdb_ci_linux_server,Red Hat Enterprise Linux,8.8,8,16384,200,10.10.1.21,P,ORD,1,1,Order-Ops,Seoul-DC1,Apache Tomcat 9.0.65; OpenJDK 1.8.0_352
+0004a1b2c3d4e5f60718293a4b5c6d7e,krc-ord-app-02,cmdb_ci_linux_server,Red Hat Enterprise Linux,8.8,8,16384,200,10.10.1.22,P,ORD,1,1,Order-Ops,Seoul-DC1,Apache Tomcat 9.0.65; OpenJDK 1.8.0_352
+0005a1b2c3d4e5f60718293a4b5c6d7e,krc-ord-db-01,cmdb_ci_linux_server,Red Hat Enterprise Linux,7.9,8,32 GB,1000,10.10.1.31,P,ORD,1,1,DBA,Seoul-DC1,MySQL 5.7.40
+0006a1b2c3d4e5f60718293a4b5c6d7e,krc-ord-app-s1,cmdb_ci_linux_server,Red Hat Enterprise Linux,8.8,4,8192,100,10.10.2.21,S,ORD,1,3,Order-Ops,Seoul-DC1,Apache Tomcat 9.0.65; OpenJDK 1.8.0_352
+0007a1b2c3d4e5f60718293a4b5c6d7e,krc-ord-db-s1,cmdb_ci_linux_server,Red Hat Enterprise Linux,7.9,4,16384,300,10.10.2.31,S,ORD,1,3,DBA,Seoul-DC1,MySQL 5.7.40
+0008a1b2c3d4e5f60718293a4b5c6d7e,krc-ord-dev-01,cmdb_ci_linux_server,Ubuntu,20.04,4,8192,150,10.10.3.11,D,ORD,1,4,Order-Ops,Seoul-DC1,Apache Tomcat 9.0.65; MySQL 5.7.40
+0009a1b2c3d4e5f60718293a4b5c6d7e,krc-hrm-web-01,cmdb_ci_win_server,Microsoft Windows Server 2019 Standard,10.0.17763,4,8192,120,10.20.1.11,P,HRM,1,2,HR-IT,Seoul-DC1,IIS 10; .NET Framework 4.8
+000aa1b2c3d4e5f60718293a4b5c6d7e,krc-hrm-web-02,cmdb_ci_win_server,Microsoft Windows Server 2019 Standard,10.0.17763,4,8192,120,10.20.1.12,P,HRM,1,2,HR-IT,Seoul-DC1,IIS 10; .NET Framework 4.8
+000ba1b2c3d4e5f60718293a4b5c6d7e,krc-hrm-app-01,cmdb_ci_win_server,Microsoft Windows Server 2019 Standard,10.0.17763,4,16384,150,10.20.1.21,P,HRM,1,2,HR-IT,Seoul-DC1,.NET Framework 4.8; Windows Service
+000ca1b2c3d4e5f60718293a4b5c6d7e,krc-hrm-db-01,cmdb_ci_win_server,Microsoft Windows Server 2019 Standard,10.0.17763,8,32768,800,10.20.1.31,P,HRM,1,2,DBA,Seoul-DC1,SQL Server 2019 Standard
+000da1b2c3d4e5f60718293a4b5c6d7e,krc-hrm-dev-01,cmdb_ci_win_server,Microsoft Windows Server 2019 Standard,10.0.17763,4,8192,200,10.20.3.11,D,HRM,1,4,HR-IT,Seoul-DC1,IIS 10; SQL Server 2019 Express
+000ea1b2c3d4e5f60718293a4b5c6d7e,krc-erp-app-01,cmdb_ci_win_server,Microsoft Windows Server 2012 R2 Standard,6.3.9600,8,16384,250,10.30.1.21,P,ERP,1,1,ERP-Ops,Busan-DC2,Custom ERP client-server; .NET Framework 4.5
+000fa1b2c3d4e5f60718293a4b5c6d7e,krc-erp-app-02,cmdb_ci_win_server,Microsoft Windows Server 2012 R2 Standard,6.3.9600,8,16384,250,10.30.1.22,P,ERP,1,1,ERP-Ops,Busan-DC2,Custom ERP client-server; .NET Framework 4.5
+0010a1b2c3d4e5f60718293a4b5c6d7e,krc-erp-db-01,cmdb_ci_win_server,Microsoft Windows Server 2012 R2 Datacenter,6.3.9600,16,65536,4000,10.30.1.31,P,ERP,1,1,DBA,Busan-DC2,SQL Server 2012 Enterprise
+0011a1b2c3d4e5f60718293a4b5c6d7e,krc-erp-bat-01,cmdb_ci_win_server,Microsoft Windows Server 2008 R2 Standard,6.1.7601,4,8192,300,10.30.1.41,P,ERP,1,2,ERP-Ops,Busan-DC2,Batch scheduler (VB6)
+0012a1b2c3d4e5f60718293a4b5c6d7e,krc-erp-app-s1,cmdb_ci_win_server,Microsoft Windows Server 2012 R2 Standard,6.3.9600,4,8192,200,10.30.2.21,S,ERP,1,3,ERP-Ops,Busan-DC2,Custom ERP client-server
+0013a1b2c3d4e5f60718293a4b5c6d7e,krc-rpt-etl-01,cmdb_ci_win_server,Microsoft Windows Server 2016 Standard,10.0.14393,8,32768,500,10.40.1.11,P,RPT,1,3,BI-Team,Seoul-DC1,SQL Server 2017 Integration Services
+0014a1b2c3d4e5f60718293a4b5c6d7e,krc-rpt-db-01,cmdb_ci_win_server,Microsoft Windows Server 2016 Standard,10.0.14393,16,131072,6000,10.40.1.31,P,RPT,1,3,DBA,Seoul-DC1,SQL Server 2017 Enterprise
+0015a1b2c3d4e5f60718293a4b5c6d7e,krc-rpt-web-01,cmdb_ci_win_server,Microsoft Windows Server 2016 Standard,10.0.14393,4,8192,120,10.40.1.12,P,RPT,1,3,BI-Team,Seoul-DC1,IIS 10; SSRS 2017; Power BI Report Server
+0016a1b2c3d4e5f60718293a4b5c6d7e,krc-shr-dc-01,cmdb_ci_win_server,Microsoft Windows Server 2016 Standard,10.0.14393,4,8192,120,10.1.0.11,P,SHR,1,1,Infra,Seoul-DC1,Active Directory Domain Services; DNS
+0017a1b2c3d4e5f60718293a4b5c6d7e,krc-shr-dc-02,cmdb_ci_win_server,Microsoft Windows Server 2016 Standard,10.0.14393,4,8192,120,10.1.0.12,P,SHR,1,1,Infra,Busan-DC2,Active Directory Domain Services; DNS
+0018a1b2c3d4e5f60718293a4b5c6d7e,krc-shr-file-01,cmdb_ci_win_server,Microsoft Windows Server 2016 Standard,10.0.14393,4,16384,8000,10.1.0.21,P,SHR,1,2,Infra,Seoul-DC1,File Server; DFS
+0019a1b2c3d4e5f60718293a4b5c6d7e,krc-shr-mon-01,cmdb_ci_linux_server,Ubuntu,20.04,4,8192,500,10.1.0.31,P,SHR,1,3,Infra,Seoul-DC1,Zabbix 6.0
+001aa1b2c3d4e5f60718293a4b5c6d7e,krc-shr-bkp-01,cmdb_ci_win_server,Microsoft Windows Server 2019 Standard,10.0.17763,8,16384,20000,10.1.0.41,P,SHR,1,3,Infra,Seoul-DC1,Veeam Backup & Replication
+001ba1b2c3d4e5f60718293a4b5c6d7e,krc-shr-jmp-01,cmdb_ci_win_server,Microsoft Windows Server 2019 Standard,10.0.17763,2,4096,80,10.1.0.51,P,SHR,1,4,Infra,Seoul-DC1,Jump host
+001ca1b2c3d4e5f60718293a4b5c6d7e,KRC-ORD-WEB-01,cmdb_ci_linux_server,Red Hat Enterprise Linux,8.8,4,8192,100,10.10.1.11,P,ORD,1,1,Order-Ops,Seoul-DC1,nginx 1.22
+001da1b2c3d4e5f60718293a4b5c6d7e,krc-old-app-07,cmdb_ci_win_server,Microsoft Windows Server 2008 R2 Standard,6.1.7601,2,4096,100,10.30.9.7,P,ERP,7,4,ERP-Ops,Busan-DC2,
+001ea1b2c3d4e5f60718293a4b5c6d7e,krc-old-db-03,cmdb_ci_win_server,Microsoft Windows Server 2003,5.2,2,2048,80,10.30.9.3,P,ERP,7,4,DBA,Busan-DC2,SQL Server 2005
+001fa1b2c3d4e5f60718293a4b5c6d7e,krc-tst-web-99,cmdb_ci_linux_server,CentOS,7.9,,,,10.99.0.99,D,,1,,,Seoul-DC1,

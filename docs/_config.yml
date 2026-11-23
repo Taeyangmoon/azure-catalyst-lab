@@ -1,0 +1,13 @@
+title: Azure Catalyst 핸즈온 랩
+description: ServiceNow CMDB 내보내기에서 시작해 Azure Catalyst로 현대화 계획을 세우고, Java 앱을 Azure Container Apps로 옮겨 보는 실습
+lang: ko
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
+search_enabled: true
+heading_anchors: true
+color_scheme: light
+aux_links:
+  "GitHub 저장소":
+    - "https://github.com/Taeyangmoon/azure-catalyst-lab"
+footer_content: "Azure Catalyst 핸즈온 랩 · 교육용 샘플입니다. 화면과 기능은 Preview 단계에서 바뀔 수 있습니다."
