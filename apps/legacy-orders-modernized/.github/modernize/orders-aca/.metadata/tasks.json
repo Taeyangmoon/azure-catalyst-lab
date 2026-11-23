@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Tasks template for modernization plan. Generate this file alongside plan.md to track individual migration tasks.",
+  "tasks": [
+    {
+      "type": "upgrade",
+      "id": "001-upgrade-java17-jakartaee10",
+      "description": "Upgrade the application runtime to Java 17 and migrate the web/servlet layer from Java EE (javax.*) to Jakarta EE 10, targeting Tomcat 10.1.",
+      "reason": "The project builds against Java 8 (end of support) and Java EE javax.* servlet APIs, which are outdated and block running on modern container base images and Tomcat 10.1.",
+      "requirements": "Upgrade the Maven build to target Java 17. Migrate all javax.servlet.* APIs, annotations, and web.xml schema to their Jakarta EE 10 (jakarta.*) equivalents so the application deploys on Tomcat 10.1. Update dependency versions (servlet API, commons-fileupload, MySQL driver) as needed to versions compatible with Jakarta EE 10 and Java 17. Addresses issues: Java Version Has Reached the End of Support, Jakarta EE Version is not the latest stable.",
+      "successCriteria": {
+        "passBuild": "true",
+        "passUnitTests": "true"
+      },
+      "dependencies": [],
+      "status": "success",
+      "summary": "Upgraded Maven build to Java 17; migrated javax.servlet.* to jakarta.servlet.* across web.xml, OrderServlet, HealthServlet, UploadServlet; updated servlet-api, mysql-connector-j, commons-fileupload2-jakarta-servlet6 dependencies; updated JDBC driver class to com.mysql.cj.jdbc.Driver. Build and tests pass.",
+      "successCriteriaStatus": {
+        "passBuild": "true",
+        "passUnitTests": "true"
+      }
+    },
+    {
+      "type": "transform",
+      "id": "002-transform-externalize-config-env-vars",
+      "description": "Read database connection settings and the upload directory path from environment variables instead of a hardcoded properties file.",
+      "reason": "Database credentials and the upload directory path are currently hardcoded in a bundled db.properties file committed to source control, which is insecure and does not allow per-environment configuration (e.g., pointing to Azure Database for MySQL).",
+      "requirements": "Replace the hardcoded db.properties values with configuration read from environment variables at application startup, covering database host/URL, port, database name, username, password, driver, and the upload directory path. Remove the hardcoded connection string and credentials from source control. Support connection parameters needed for Azure Database for MySQL (e.g., SSL mode). Preserve existing behavior when all required environment variables are supplied. Addresses issues: MySQL database found (hardcoded credentials), File system - Java IO.",
+      "successCriteria": {
+        "passBuild": "true",
+        "passUnitTests": "true"
+      },
+      "dependencies": [
+        "001-upgrade-java17-jakartaee10"
+      ],
+      "status": "success",
+      "summary": "Replaced hardcoded src/main/resources/db.properties with environment-variable-based configuration in DbConfig.java. DB_URL (or DB_HOST/DB_PORT/DB_NAME/DB_SSL_MODE), DB_USER, DB_PASSWORD, DB_DRIVER and UPLOAD_DIR are now read from the environment at first use; sslMode defaults to REQUIRED for Azure Database for MySQL. Deleted the hardcoded db.properties file containing credentials. Preserved DbConfig.open()/uploadDir()/override() API so OrderDao, UploadServlet and OrderDaoTest are unaffected. Build and unit tests pass.",
+      "successCriteriaStatus": {
+        "passBuild": "true",
+        "passUnitTests": "true"
+      }
+    },
+    {
+      "type": "transform",
+      "id": "003-transform-logging-to-console",
+      "description": "Redirect application logging from a local log file to stdout/console.",
+      "reason": "The application currently writes logs to a local rolling file on disk, which is lost when a container is replaced and is not collected by Azure Container Apps' log pipeline.",
+      "requirements": "Remove the file-based/rolling-file log appender and configure a console appender as the sole logging output, preserving existing log levels and message format where possible. Addresses issues: Avoid File System Logging in Configuration.",
+      "skills": [
+        {
+          "name": "migration-log-to-console",
+          "location": "builtin"
+        }
+      ],
+      "successCriteria": {
+        "passBuild": "true",
+        "passUnitTests": "true"
+      },
+      "dependencies": [
+        "002-transform-externalize-config-env-vars"
+      ],
+      "status": "success",
+      "summary": "Replaced the file-based RollingFileAppender in log4j.properties (writing to /var/log/contoso/orders.log) with a ConsoleAppender targeting System.out as the sole logging output. Preserved the INFO log level and the existing ISO8601 pattern layout. No application code changes were needed since OrderServlet and UploadServlet log only via the log4j Logger API. Build and unit tests pass; consistency check found zero issues.",
+      "successCriteriaStatus": {
+        "passBuild": "true",
+        "passUnitTests": "true"
+      }
+    },
+    {
+      "type": "security",
+      "id": "004-security-cve-remediation",
+      "description": "Scan all project dependencies for known CVEs and remediate any identified vulnerabilities to ensure the application is secure before deployment.",
+      "reason": "Dependencies updated during the Java 17/Jakarta EE 10 migration and the legacy MySQL driver must be checked for known vulnerabilities before deploying to Azure.",
+      "requirements": "Upgrade vulnerable dependencies to the minimum patched version. If a CVE fix requires a major version upgrade, document the affected dependency, the current version, the upgraded major version, and the breaking change risk. Verify that the project builds and all tests pass after remediation.",
+      "skills": [
+        {
+          "name": "validate-cves-and-fix",
+          "location": "builtin"
+        }
+      ],
+      "successCriteria": {
+        "passBuild": "true",
+        "passUnitTests": "true"
+      },
+      "dependencies": [
+        "003-transform-logging-to-console"
+      ],
+      "status": "success",
+      "summary": "Scanned 10 dependencies, found 10 CVEs across log4j:log4j:1.2.17 (replaced with reload4j 1.2.26, drop-in replacement) and h2:1.4.200 test dependency (upgraded to 2.3.232, major version bump documented as breaking-change risk). Re-scan confirmed 0 remaining CVEs. Build and tests pass.",
+      "successCriteriaStatus": {
+        "passBuild": "true",
+        "passUnitTests": "true"
+      }
+    },
+    {
+      "type": "transform",
+      "id": "005-transform-dockerfile",
+      "description": "Containerize the application with a Dockerfile (build only, do NOT deploy to Azure).",
+      "reason": "The application has no container packaging today and must run as a container on Azure Container Apps against Azure Database for MySQL.",
+      "requirements": "Create a multi-stage Dockerfile that builds the WAR with Maven and Java 17 and runs it on Tomcat 10.1 (Java 17 JRE) as ROOT.war. Expose port 8080. Add a .dockerignore. Do not create or modify any Azure resources and do not run az, azd or Bicep commands. The application reads its configuration from the environment variables introduced in task 002 and writes logs to stdout.",
+      "dependencies": [
+        "004-security-cve-remediation"
+      ],
+      "successCriteria": {
+        "passBuild": "true",
+        "passUnitTests": "true"
+      },
+      "status": "success",
+      "summary": "Created multi-stage Dockerfile (Maven/Java17 build stage, Tomcat 10.1/Java17 runtime stage) packaging the WAR as ROOT.war, exposing port 8080, running as non-root; added .dockerignore. App reads config from env vars (task 002) and logs to stdout (task 003). No Azure resources created or modified. Build and tests pass.",
+      "successCriteriaStatus": {
+        "passBuild": "true",
+        "passUnitTests": "true"
+      }
+    }
+  ],
+  "metadata": {
+    "planName": "orders-aca",
+    "projectName": "Contoso Order Portal (orders)",
+    "language": "java",
+    "createdAt": "2026-11-23T06:24:46Z",
+    "version": "1.0"
+  }
+}
