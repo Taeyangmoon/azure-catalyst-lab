@@ -1,4 +1,5 @@
 ---
+permalink: /lab3-business-case/
 title: "3. 비즈니스 케이스"
 nav_order: 5
 ---

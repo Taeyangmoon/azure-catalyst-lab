@@ -1,4 +1,5 @@
 ---
+permalink: /lab0-setup/
 title: "0. 준비"
 nav_order: 2
 ---

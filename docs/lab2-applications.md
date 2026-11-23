@@ -1,4 +1,5 @@
 ---
+permalink: /lab2-applications/
 title: "2. 애플리케이션과 보안 위험"
 nav_order: 4
 ---

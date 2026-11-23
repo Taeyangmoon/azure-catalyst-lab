@@ -1,4 +1,5 @@
 ---
+permalink: /troubleshooting/
 title: 문제 해결
 nav_order: 11
 ---

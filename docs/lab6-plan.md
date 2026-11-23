@@ -1,4 +1,5 @@
 ---
+permalink: /lab6-plan/
 title: "6. 웨이브 계획과 랜딩 존"
 nav_order: 8
 ---

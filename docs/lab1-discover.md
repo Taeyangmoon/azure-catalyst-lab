@@ -1,4 +1,5 @@
 ---
+permalink: /lab1-discover/
 title: "1. 발견: AI 파일 가져오기"
 nav_order: 3
 ---

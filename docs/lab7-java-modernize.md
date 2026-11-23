@@ -1,4 +1,5 @@
 ---
+permalink: /lab7-java-modernize/
 title: "7. Java 앱 현대화와 배포"
 nav_order: 9
 ---

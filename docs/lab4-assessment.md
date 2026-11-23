@@ -1,4 +1,5 @@
 ---
+permalink: /lab4-assessment/
 title: "4. 평가와 마이그레이션 전략"
 nav_order: 6
 ---

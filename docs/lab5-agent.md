@@ -1,4 +1,5 @@
 ---
+permalink: /lab5-agent/
 title: "5. Catalyst 에이전트"
 nav_order: 7
 ---

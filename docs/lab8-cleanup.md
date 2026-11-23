@@ -1,4 +1,5 @@
 ---
+permalink: /lab8-cleanup/
 title: "8. 정리"
 nav_order: 10
 ---
