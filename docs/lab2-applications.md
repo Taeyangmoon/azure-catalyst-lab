@@ -40,7 +40,7 @@ Ignite BRK409의 핵심 메시지 중 하나가 "서버를 마이그레이션하
 28대 중 **10대가 운영체제 지원 종료(End of support)** 입니다. Windows Server 2012 R2/2008 R2와 RHEL 7.9입니다. "왜 지금 현대화해야 하는가"의 근거가 인벤토리만으로 생겼습니다.
 
 {: .note }
-Software 위험(`Software end of support`, `With vulnerabilities`)이 0으로 나오는 이유는 **파일 가져오기에 설치된 소프트웨어의 정밀 정보가 없기 때문**입니다. Appliance로 발견하면 더 많은 위험이 보입니다.
+Software 위험(`Software end of support`, `With vulnerabilities`)은 이 랩에서 **0**으로 나옵니다. **Software recommendations** 화면은 "No software data"라고 안내합니다. 설치된 소프트웨어 정보는 Appliance 같은 방식으로 수집해야 보입니다.
 
 ## 3. 결과 확인
 

@@ -15,6 +15,18 @@ jobs:
       - name: Build legacy order portal (JDK 8)
         working-directory: apps/legacy-orders
         run: mvn -B -ntp package
+  java-build-modernized:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+      - name: Build modernized order portal (JDK 17, Jakarta EE 10)
+        working-directory: apps/legacy-orders-modernized
+        run: mvn -B -ntp package
   data:
     runs-on: ubuntu-latest
     steps:

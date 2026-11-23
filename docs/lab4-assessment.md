@@ -21,6 +21,9 @@ nav_order: 6
 
 ![평가 목록]({{ '/images/ko/e1-assessments-list.png' | relative_url }})
 
+{: .note }
+이 캡처에는 3장의 비교 실험에서 만든 `bc-contoso-korea-asmt`(앱 없이 만든 비즈니스 케이스)도 함께 보입니다. 이 랩을 그대로 따라 하면 `bc-contoso-apps-asmt` 하나만 보입니다.
+
 ## 2. 평가 개요
 
 `bc-contoso-apps-asmt`를 엽니다.
