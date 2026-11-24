@@ -1,6 +1,7 @@
 ---
 permalink: /lab6-plan/
 title: "6. 웨이브 계획과 랜딩 존"
+parent: 한국어
 nav_order: 8
 ---
 
@@ -22,11 +23,11 @@ nav_order: 8
 
 **Plan → Assessments**에서 `bc-contoso-apps-asmt`를 열고, 권장 경로 **PaaS preferred**의 **View path details**에서 **Generate wave plan**을 누릅니다.
 
-![웨이브 계획 만들기]({{ '/images/ko/h1-generate-wave-plan.png' | relative_url }})
+![웨이브 계획 만들기]({{ '/images/shots/h1-generate-wave-plan.png' | relative_url }})
 
 몇 분 뒤 **Plan → Wave plan**에 계획이 나타납니다.
 
-![웨이브 계획]({{ '/images/ko/h3-wave-plan.png' | relative_url }})
+![웨이브 계획]({{ '/images/shots/h3-wave-plan.png' | relative_url }})
 
 | 항목 | 이 랩에서 나온 값 |
 |---|---|
@@ -39,7 +40,7 @@ nav_order: 8
 
 ### 위험과 권고
 
-![웨이브 위험]({{ '/images/ko/h4-wave-risks.png' | relative_url }})
+![웨이브 위험]({{ '/images/shots/h4-wave-risks.png' | relative_url }})
 
 | 위험 | 심각도 | 내용 | 권고 |
 |---|---|---|---|
@@ -57,11 +58,11 @@ nav_order: 8
 
 **Plan → Application design**을 엽니다. 앱 목록 위의 **Related artifacts**에 **Wave plan**과 **Platform landing zone**이 있습니다.
 
-![Application design]({{ '/images/ko/h2-application-design.png' | relative_url }})
+![Application design]({{ '/images/shots/h2-application-design.png' | relative_url }})
 
 **Platform landing zone**을 선택합니다.
 
-![Platform Landing Zone]({{ '/images/ko/h7-platform-landing-zone.png' | relative_url }})
+![Platform Landing Zone]({{ '/images/shots/h7-platform-landing-zone.png' | relative_url }})
 
 Catalyst가 **설계 문서**(Platform Landing Zone - Design Document)를 만들어 줍니다.
 
@@ -93,7 +94,7 @@ Keep the Lite scale tier with Azure Firewall Basic, Hub and Spoke, region Korea 
 
 에이전트가 생성을 시작하고, **설계 문서와 IaC ZIP**이 비동기로 만들어진다고 안내합니다(약 2분). 완료 후 **Application design → Platform landing zone**을 다시 열면 설계 문서의 **Region이 KOREACENTRAL**로 바뀌어 있습니다.
 
-![에이전트로 Korea Central 요청]({{ '/images/ko/h10-agent-plz-request.png' | relative_url }})
+![에이전트로 Korea Central 요청]({{ '/images/shots/h10-agent-plz-request.png' | relative_url }})
 
 | 항목 | 처음 (기본) | 에이전트 요청 후 |
 |---|---|---|
@@ -106,7 +107,7 @@ Keep the Lite scale tier with Azure Firewall Basic, Hub and Spoke, region Korea 
 
 ### 설정 바꾸기 (View settings)
 
-![설정]({{ '/images/ko/h8-plz-settings.png' | relative_url }})
+![설정]({{ '/images/shots/h8-plz-settings.png' | relative_url }})
 
 설정에서 **구독 배치**(Identity, Connectivity, Management, Security), **네트워크 선호**(Hub and spoke 또는 Virtual WAN), **방화벽**(Azure Firewall 또는 타사 NVA), **배포 방식**(GitHub, Azure DevOps, 로컬 파일 시스템)과 **DDoS Protection, ExpressRoute Gateway, Private DNS, Bastion** 옵션을 고릅니다.
 

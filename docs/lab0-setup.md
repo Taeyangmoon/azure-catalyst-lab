@@ -1,6 +1,7 @@
 ---
 permalink: /lab0-setup/
 title: "0. 준비"
+parent: 한국어
 nav_order: 2
 ---
 
@@ -98,7 +99,7 @@ az group create --name rg-catalyst-lab --location koreacentral \
 | Geography | **Korea** |
 | Artifact store | **Use same subscription and resource group as project** 체크 (스토리지 계정 이름은 자동 생성) |
 
-![프로젝트 만들기]({{ '/images/ko/a1-create-project-form.png' | relative_url }})
+![프로젝트 만들기]({{ '/images/shots/a1-create-project-form.png' | relative_url }})
 
 {: .warning }
 **Geography**는 프로젝트 메타데이터가 저장되는 위치입니다. 만든 뒤에는 바꿀 수 없습니다.

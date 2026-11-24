@@ -1,6 +1,7 @@
 ---
 permalink: /lab2-applications/
 title: "2. 애플리케이션과 보안 위험"
+parent: 한국어
 nav_order: 4
 ---
 
@@ -24,7 +25,7 @@ nav_order: 4
 2. **Auto discover**를 선택합니다.
 3. 오른쪽 창의 안내를 읽고 **Discover applications**를 누릅니다.
 
-![Auto discover]({{ '/images/ko/b1-auto-discover-apps.png' | relative_url }})
+![Auto discover]({{ '/images/shots/b1-auto-discover-apps.png' | relative_url }})
 
 화면의 설명처럼 Catalyst는 **서버 이름 패턴, 추정한 환경, 서버 역할**을 이용해 앱을 묶습니다. 이 랩의 서버 이름은 `krc-<앱코드>-<역할>-<번호>` 규칙을 따르기 때문에 잘 묶입니다.
 
@@ -35,7 +36,7 @@ nav_order: 4
 
 **Decide → Security Insights**를 엽니다.
 
-![Security Insights]({{ '/images/ko/c6-security-insights.png' | relative_url }})
+![Security Insights]({{ '/images/shots/c6-security-insights.png' | relative_url }})
 
 28대 중 **10대가 운영체제 지원 종료(End of support)** 입니다. Windows Server 2012 R2/2008 R2와 RHEL 7.9입니다. "왜 지금 현대화해야 하는가"의 근거가 인벤토리만으로 생겼습니다.
 
@@ -46,7 +47,7 @@ Software 위험(`Software end of support`, `With vulnerabilities`)은 이 랩에
 
 자동 발견이 끝나면 **Applications**에 아래와 같이 앱 5개가 나타납니다. 안 보이면 **Refresh**를 누르세요.
 
-![Applications]({{ '/images/ko/f1-applications.png' | relative_url }})
+![Applications]({{ '/images/shots/f1-applications.png' | relative_url }})
 
 | 앱 | 워크로드 수 | 복잡도 | 신뢰도 |
 |---|---:|---|---:|

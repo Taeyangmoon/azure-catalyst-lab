@@ -1,5 +1,7 @@
 # Azure Catalyst 핸즈온 랩
 
+🌐 **한국어** | [English](README.en.md)
+
 ServiceNow CMDB 내보내기에서 시작해 Azure Catalyst(구 Azure Migrate)로 현대화 계획을 세우고, 레거시 Java 앱을 Azure Container Apps로 옮겨 보는 실습입니다. (한국어)
 
 📖 **랩 문서(GitHub Pages)**: https://taeyangmoon.github.io/azure-catalyst-lab/

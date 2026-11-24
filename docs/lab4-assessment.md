@@ -1,6 +1,7 @@
 ---
 permalink: /lab4-assessment/
 title: "4. 평가와 마이그레이션 전략"
+parent: 한국어
 nav_order: 6
 ---
 
@@ -19,7 +20,7 @@ nav_order: 6
 
 **Plan → Assessments**를 엽니다. 비즈니스 케이스를 만들 때 자동으로 생성된 `bc-contoso-apps-asmt`가 있습니다.
 
-![평가 목록]({{ '/images/ko/e1-assessments-list.png' | relative_url }})
+![평가 목록]({{ '/images/shots/e1-assessments-list.png' | relative_url }})
 
 {: .note }
 이 캡처에는 3장의 비교 실험에서 만든 `bc-contoso-korea-asmt`(앱 없이 만든 비즈니스 케이스)도 함께 보입니다. 이 랩을 그대로 따라 하면 `bc-contoso-apps-asmt` 하나만 보입니다.
@@ -28,7 +29,7 @@ nav_order: 6
 
 `bc-contoso-apps-asmt`를 엽니다.
 
-![평가 개요]({{ '/images/ko/e2-assessment-overview.png' | relative_url }})
+![평가 개요]({{ '/images/shots/e2-assessment-overview.png' | relative_url }})
 
 | 항목 | 이 랩에서 나온 값 |
 |---|---|
@@ -46,7 +47,7 @@ nav_order: 6
 
 **PaaS preferred**의 **View path details**를 엽니다. 앱마다 전략이 나옵니다.
 
-![경로 상세]({{ '/images/ko/e3-path-details.png' | relative_url }})
+![경로 상세]({{ '/images/shots/e3-path-details.png' | relative_url }})
 
 | 앱 | 전략 | 월 비용 (USD) | 워크로드 |
 |---|---|---:|---:|
@@ -62,7 +63,7 @@ nav_order: 6
 
 **Plan → Application design**에서 `Application_ord`를 엽니다.
 
-![Application_ord 설계]({{ '/images/ko/h5-app-design-ord.png' | relative_url }})
+![Application_ord 설계]({{ '/images/shots/h5-app-design-ord.png' | relative_url }})
 
 | 항목 | `Application_ord` |
 |---|---|

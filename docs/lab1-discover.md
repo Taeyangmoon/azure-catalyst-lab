@@ -1,6 +1,7 @@
 ---
 permalink: /lab1-discover/
 title: "1. 발견: AI 파일 가져오기"
+parent: 한국어
 nav_order: 3
 ---
 
@@ -38,18 +39,18 @@ nav_order: 3
 2. **Overview**에서 **Start discovery**를 선택합니다.
 3. **Using file import (AI-powered)** 를 선택하고, **File type**에서 **Inventory exports from ServiceNow, Ansible, Dynatrace, etc.** 를 고른 뒤 **Continue**를 누릅니다.
 
-![발견 방법 선택]({{ '/images/ko/a2-discover-file-type.png' | relative_url }})
+![발견 방법 선택]({{ '/images/shots/a2-discover-file-type.png' | relative_url }})
 
 ## 2. ZIP 업로드와 분석
 
 1. **File source**의 찾아보기 아이콘을 눌러 [`contoso-korea-cmdb.zip`](https://github.com/Taeyangmoon/azure-catalyst-lab/raw/main/data/contoso-korea-cmdb.zip)을 선택합니다.
 2. **Analyze file**을 누릅니다. 분석에는 **보통 3~6분**이 걸립니다.
 
-![ZIP 선택]({{ '/images/ko/a3-file-selected.png' | relative_url }})
+![ZIP 선택]({{ '/images/shots/a3-file-selected.png' | relative_url }})
 
 분석이 끝나면 요약이 나옵니다.
 
-![분석 결과]({{ '/images/ko/a4-analysis-result.png' | relative_url }})
+![분석 결과]({{ '/images/shots/a4-analysis-result.png' | relative_url }})
 
 | 결과 항목 | 이 랩에서 나온 값 | 해석 |
 |---|---|---|
@@ -78,7 +79,7 @@ Which server is missing CPU, memory and disk values? Also, KRC-ORD-WEB-01 is the
 For krc-tst-web-99, use the same sizing as krc-ord-dev-01 (4 vCores, 8192 MB memory, 150 GB storage). Apply the change and confirm the final server count.
 ```
 
-![에이전트로 검토]({{ '/images/ko/a5-review-with-agent.png' | relative_url }})
+![에이전트로 검토]({{ '/images/shots/a5-review-with-agent.png' | relative_url }})
 
 {: .note }
 에이전트가 값을 바꾸는 것은 **저장 전의 제안**입니다. 에이전트는 이런 변경을 `import-logic.txt`(매핑 규칙)와 `AllInventory-*.csv`(값)에 반영합니다. 직접 고치고 싶으면 **Download file**로 받아 편집한 뒤 다시 올릴 수도 있습니다.
@@ -87,7 +88,7 @@ For krc-tst-web-99, use the same sizing as krc-ord-dev-01 (4 vCores, 8192 MB mem
 
 **Save to inventory**를 선택합니다. 저장 뒤에는 수정할 수 없습니다.
 
-![저장]({{ '/images/ko/a6-save-to-inventory.png' | relative_url }})
+![저장]({{ '/images/shots/a6-save-to-inventory.png' | relative_url }})
 
 저장 후 인벤토리 처리에는 **10~15분** 정도 걸립니다. 처리 중에는 **All inventory**에 "Inventory upload using file import is in progress" 안내가 보입니다. 공식 문서는 평가 전에 **30분** 정도 기다리라고 권장하지만, 이 랩에서는 안내가 사라지면 다음 단계로 진행했습니다.
 
@@ -95,7 +96,7 @@ For krc-tst-web-99, use the same sizing as krc-ord-dev-01 (4 vCores, 8192 MB mem
 
 **Discover → All inventory**를 엽니다.
 
-![All inventory]({{ '/images/ko/a7-all-inventory.png' | relative_url }})
+![All inventory]({{ '/images/shots/a7-all-inventory.png' | relative_url }})
 
 확인할 것:
 
@@ -118,4 +119,4 @@ For krc-tst-web-99, use the same sizing as krc-ord-dev-01 (4 vCores, 8192 MB mem
 | 에이전트 패널이 열리지 않음 | **Review inventory**를 다시 누르거나 Azure Copilot가 켜져 있는지 확인하세요. |
 | 저장했는데 인벤토리가 비어 있음 | 10~15분 정도 기다린 뒤 **Refresh** |
 
-➡️ 다음: 2. 평가와 비즈니스 케이스 (작성 중)
+➡️ 다음: [2. 애플리케이션과 보안 위험]({{ '/lab2-applications/' | relative_url }})

@@ -1,6 +1,7 @@
 ---
 permalink: /lab5-agent/
 title: "5. Catalyst 에이전트"
+parent: 한국어
 nav_order: 7
 ---
 
@@ -24,7 +25,7 @@ nav_order: 7
 2. **New chat** 옆 드롭다운에서 **Catalyst**를 선택합니다.
 3. 입력창 아래 **Work in a project**에서 `catalyst-lab`을 선택합니다.
 
-![에이전트 열기]({{ '/images/ko/d1-agent-open.png' | relative_url }})
+![에이전트 열기]({{ '/images/shots/d1-agent-open.png' | relative_url }})
 
 {: .note }
 에이전트가 보이지 않으면 테넌트에서 **Azure Copilot가 켜져 있는지**, 관리자가 접근을 허용했는지 확인하세요. 1장에서 **Review inventory**를 누르면 같은 에이전트가 오른쪽 패널에 열렸습니다.
@@ -37,7 +38,7 @@ nav_order: 7
 Summarize my business case bc-contoso-apps: on-premises cost, recommended path, future cost, savings and Azure value uplift. Why is the PaaS preferred path recommended even though its savings are lower than lift and shift?
 ```
 
-![비즈니스 케이스 요약]({{ '/images/ko/d2-agent-business-case.png' | relative_url }})
+![비즈니스 케이스 요약]({{ '/images/shots/d2-agent-business-case.png' | relative_url }})
 
 에이전트는 약 1분 뒤에 **표와 차트**로 답했습니다. 3장에서 직접 읽은 숫자와 **일치**합니다.
 
@@ -67,7 +68,7 @@ Group the servers into applications using the naming convention krc-<app>-<role>
 My application assessment is named bc-contoso-apps-asmt. List its applications with workloads, complexity and business criticality, then explain the recommended migration strategy and Azure target for each application, and why ERP and HRM are replatform while ORD is rehost.
 ```
 
-![평가 질문]({{ '/images/ko/d3-agent-6r.png' | relative_url }})
+![평가 질문]({{ '/images/shots/d3-agent-6r.png' | relative_url }})
 
 이번에는 에이전트가 **평가 전체 요약**만 말하고, **앱별 세부 내용을 말하지 못한다**고 인정했습니다. 그리고 포털에서 Applications 화면을 열어 보라고 권했습니다. 같은 질문을 처음에 **평가 이름 없이** 던졌을 때는 "어떤 평가를 쓸지 알려 달라"고 되물었습니다.
 

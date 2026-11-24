@@ -1,6 +1,7 @@
 ---
 permalink: /lab7-java-modernize/
 title: "7. Java 앱 현대화와 배포"
+parent: 한국어
 nav_order: 9
 ---
 
@@ -195,19 +196,19 @@ az containerapp create -g $RG -n orders-web --environment orders-env \
 
 **Azure Portal**에서 `rg-orders-lab`을 열면 아래 리소스가 보입니다.
 
-![리소스 그룹]({{ '/images/ko/g1-rg-orders-lab.png' | relative_url }})
+![리소스 그룹]({{ '/images/shots/g1-rg-orders-lab.png' | relative_url }})
 
 `orders-web` Container App의 **Application Url**을 엽니다.
 
-![Container App 개요]({{ '/images/ko/g2-containerapp-overview.png' | relative_url }})
+![Container App 개요]({{ '/images/shots/g2-containerapp-overview.png' | relative_url }})
 
 주문을 입력하고 **Order** 버튼을 눌러 보세요. (앱 화면은 영어이며, 한국어와 영어 랩이 같은 앱을 씁니다.) 데이터가 **Azure Database for MySQL**에 저장됩니다.
 
-![앱 실행]({{ '/images/ko/g3-app-running.png' | relative_url }})
+![앱 실행]({{ '/images/shots/g3-app-running.png' | relative_url }})
 
 **Monitoring → Log stream**에서 **Application** 로그를 보면, 3번 작업으로 바꾼 로그가 **stdout을 통해 수집**되는 것을 볼 수 있습니다. (`Order received: Alice Kim / Laptop x 2` 같은 줄)
 
-![Log stream]({{ '/images/ko/g4-log-stream.png' | relative_url }})
+![Log stream]({{ '/images/shots/g4-log-stream.png' | relative_url }})
 
 CLI로도 확인할 수 있습니다.
 

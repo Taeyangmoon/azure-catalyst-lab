@@ -1,6 +1,7 @@
 ---
 permalink: /lab3-business-case/
 title: "3. 비즈니스 케이스"
+parent: 한국어
 nav_order: 5
 ---
 
@@ -24,11 +25,11 @@ nav_order: 5
 
 **Scope**에서 **Select workloads or applications**를 선택하고 **Add applications**를 누릅니다. 앱 5개를 모두 선택하고 **Add**를 누릅니다. 자동 발견된 앱이라는 확인 창이 뜨면 **Confirm**을 누릅니다.
 
-![앱 선택]({{ '/images/ko/c1b-bc-select-apps.png' | relative_url }})
+![앱 선택]({{ '/images/shots/c1b-bc-select-apps.png' | relative_url }})
 
 **5 applications (with 32 workloads) selected**라고 나오면 됩니다.
 
-![Basics]({{ '/images/ko/c1-bc-basics.png' | relative_url }})
+![Basics]({{ '/images/shots/c1-bc-basics.png' | relative_url }})
 
 {: .warning }
 **범위는 만든 뒤에 바꿀 수 없습니다.** 앱을 정의하기 전에 **Entire data center**로 만들면 [아래 "앱 없이 만들면"](#앱-없이-만들면)처럼 결과가 달라지고, **Recompute**로도 고쳐지지 않습니다.
@@ -43,7 +44,7 @@ nav_order: 5
 | Include Platform Landing Zone recommendations | **체크** | 6장 랜딩 존에서 사용 |
 | Sizing criteria | **As on-premises** | 파일 가져오기에는 **성능 데이터가 없음** |
 
-![General]({{ '/images/ko/c2-bc-general.png' | relative_url }})
+![General]({{ '/images/shots/c2-bc-general.png' | relative_url }})
 
 {: .warning }
 **Performance-based**(성능 기반)는 CPU/메모리 사용률 이력이 필요합니다. 파일 가져오기로 만든 인벤토리에는 이력이 없으므로 **As on-premises**(현재 사양 기준)를 선택해야 합니다.
@@ -52,15 +53,15 @@ nav_order: 5
 
 Advanced는 기본값 그대로 **Save**를 누르고, **Create business case**를 누릅니다.
 
-![Advanced]({{ '/images/ko/c3-bc-advanced.png' | relative_url }})
+![Advanced]({{ '/images/shots/c3-bc-advanced.png' | relative_url }})
 
-![Create]({{ '/images/ko/c4-bc-create.png' | relative_url }})
+![Create]({{ '/images/shots/c4-bc-create.png' | relative_url }})
 
 ## 2. 결과 읽기
 
 계산에는 **약 8~15분**이 걸립니다. 상태가 **Ready**가 되면 `bc-contoso-apps`를 엽니다.
 
-![비즈니스 케이스 개요]({{ '/images/ko/c5-bc-overview.png' | relative_url }})
+![비즈니스 케이스 개요]({{ '/images/shots/c5-bc-overview.png' | relative_url }})
 
 | 항목 | PaaS preferred (권장) | Lift and shift |
 |---|---:|---:|
@@ -81,7 +82,7 @@ Advanced는 기본값 그대로 **Save**를 누르고, **Create business case**�
 
 비교를 위해 **Entire data center** 범위로 만든 비즈니스 케이스도 확인했습니다. 서버 28대와 SQL 5개를 통째로 넣은 경우입니다.
 
-![앱 없이 만든 경우]({{ '/images/ko/f3-value-uplift-zero.png' | relative_url }})
+![앱 없이 만든 경우]({{ '/images/shots/f3-value-uplift-zero.png' | relative_url }})
 
 **Azure value uplift가 $0**이고 "Not calculated for this business case"라고 나옵니다. 이유는 화면에 적힌 대로 **Azure Value Uplift는 애플리케이션마다 계산되기 때문**입니다. 이 비즈니스 케이스에는 앱이 없어서 33개 워크로드가 모두 "ungrouped"입니다. 해결책도 화면에 있습니다. **새 비즈니스 케이스를 만들어 앱을 범위에 포함**해야 합니다.
 

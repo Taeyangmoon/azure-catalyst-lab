@@ -1,6 +1,7 @@
 ---
 permalink: /lab8-cleanup/
 title: "8. 정리"
+parent: 한국어
 nav_order: 10
 ---
 

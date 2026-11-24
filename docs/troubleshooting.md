@@ -1,6 +1,7 @@
 ---
 permalink: /troubleshooting/
 title: 문제 해결
+parent: 한국어
 nav_order: 11
 ---
 
@@ -22,6 +23,7 @@ nav_order: 11
 | 에이전트가 "평가 이름을 알려 달라"고 함 | 앱 목록과 전략은 특정 **평가(assessment)** 기준으로 조회합니다. 평가 이름을 함께 알려 주세요. |
 | 에이전트 패널이 열리지 않음 / 메뉴에 **Catalyst**가 없음 | 테넌트의 **Azure Copilot** 활성화 여부와 관리자의 접근 설정을 확인하세요. |
 | **Web apps**가 0건 | 파일 가져오기는 Tomcat/IIS를 **서버의 웹 서버 소프트웨어**로만 인식합니다. 웹 앱 평가와 Code Insights는 Appliance 기반 discovery가 필요합니다. |
+| Platform Landing Zone의 지역이 EASTUS | **View settings**에는 지역 항목이 없습니다. **Catalyst 에이전트**에게 Korea Central로 PLZ를 만들어 달라고 요청하세요(6장). |
 
 ## Java 현대화와 배포
 
